@@ -7,6 +7,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/tsparticles-confetti@2.12.0/tsparticles.confetti.bundle.min.js"></script>
     <link rel="stylesheet" href="style.css" />
     <!-- "defer" executa o script só depois da página estar 100% carregada -->
     <script src="script.js" defer="defer"></script>
@@ -30,7 +31,7 @@
                         <div class="input-group">
                             <!-- "placeholder" é o texto que aparece até escrevermos algo no campo -->
                             <input type="text" id="txt-nova-tarefa" class="form-control" placeholder="Adicionar nova tarefa..." />
-                            <input type="button" id="btn-nova-tarefa" class="btn btn-outline-primary" value="Adicionar" />
+                            <input type="button" id="btn-nova-tarefa" value="Adicionar" />
                         </div>
                     </div>
                 </div> <!-- .card-->
@@ -41,19 +42,7 @@
             <div class="col-12">
                 <!-- Cria uma lista (ul) -->
                 <ul class="list-group" id="lista-tarefas">
-                    <!-- Cria um sub-item da lista (li) -->
-                     <!-- "justify-content-between" significa alinhar os elementos:
-                      - à extrema-esquerda (nome da tarefa)
-                      - e à extrema-direita (botões de ação da tarefa) -->
-                    <li class="list-group-item d-flex justify-content-between align-ittems-center">
-                        Tarefa 1
-                        <div>
-                            <!-- .btn-sm cria um botão pequeno -->
-                             <!-- .me-2 cria um espaçamento ao final do botão (para que os botões não fiquem grudados) -->
-                            <button class="btn btn-success btn-sm me-2">Concluir</button>
-                            <button class="btn btn-danger btn-sm">Excluir</button>
-                        </div>
-                    </li>
+                   
                 </ul>
             </div>
         </div>

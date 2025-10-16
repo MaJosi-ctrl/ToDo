@@ -1,0 +1,76 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Bonbon&display=swap');
+
+h1 {
+    font-family: "Bonbon";
+    
+    color: rgb(56, 136, 173);
+}
+
+
+body {
+    background-color: rgba(125, 198, 240, 0.801);
+}
+.card {
+    background-color: rgb(191, 226, 255);
+    border: 1px solid rgb(99, 188, 230);
+}
+
+input[type= "text"] {
+    background-color: rgb(191, 226, 255);
+    border: 1px solid rgb(99, 188, 230);
+}
+
+
+input[type="text"]::placeholder {
+    color: rgb(59, 146, 187);
+}
+
+/* Altera o estilo da caixa de texto "Adicionar nova tarefa" ao clicar nela */
+input[type="text"]:focus {
+    background-color: rgb(191, 226, 255);
+    color: rgb(59, 146, 187);
+}
+
+#btn-nova-tarefa {
+    background-color: rgb(99, 188, 230);
+    color: rgb(221, 239, 255);
+    border: 1px solid rgb(99, 188, 230);
+}
+
+#btn-nova-tarefa:hover {
+    background-color: rgb(191, 226, 255);
+    color: rgb(99, 188, 230);
+
+}
+
+.list-group-item {
+    color: rgb(65, 98, 138);
+    background-color: rgb(191, 226, 255);
+    border: 1px solid rgb(99, 188, 230);
+
+}
+
+.btn-success {
+    background-color: rgb(99, 188, 230);
+    color: rgb(221, 239, 255);
+    border: 1px solid rgb(99, 188, 230);
+}
+
+.btn-success:hover {
+    background-color: rgb(191, 226, 255);
+    color: rgb(99, 188, 230);
+
+}
+
+.btn-danger {
+    background-color: rgb(99, 188, 230);
+    color: rgb(221, 239, 255);
+    border: 1px solid rgb(99, 188, 230);
+}
+
+.btn-danger:hover {
+    background-color: rgb(191, 226, 255);
+    color: rgb(99, 188, 230);
+
+}
