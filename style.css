@@ -1,7 +1,7 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Bonbon&display=swap');
 
-h1 {
+h1.titulo {
     font-family: "Bonbon";
     
     color: rgb(56, 136, 173);
@@ -30,6 +30,10 @@ input[type="text"]::placeholder {
 input[type="text"]:focus {
     background-color: rgb(191, 226, 255);
     color: rgb(59, 146, 187);
+
+     border-color: rgb(99, 188, 230);
+    box-shadow: 0 1px 1px rgb(99, 188, 230) inset, 0 0 8px  rgb(73, 143, 228);
+    outline: 0 none;
 }
 
 #btn-nova-tarefa {
@@ -51,25 +55,25 @@ input[type="text"]:focus {
 
 }
 
-.btn-success {
+.btn-concluir {
     background-color: rgb(99, 188, 230);
     color: rgb(221, 239, 255);
     border: 1px solid rgb(99, 188, 230);
 }
 
-.btn-success:hover {
+.btn-concluir:hover {
     background-color: rgb(191, 226, 255);
     color: rgb(99, 188, 230);
 
 }
 
-.btn-danger {
+.btn-excluir {
     background-color: rgb(99, 188, 230);
     color: rgb(221, 239, 255);
     border: 1px solid rgb(99, 188, 230);
 }
 
-.btn-danger:hover {
+.btn-excluir:hover {
     background-color: rgb(191, 226, 255);
     color: rgb(99, 188, 230);
 
