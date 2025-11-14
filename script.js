@@ -36,9 +36,13 @@ function iniciaToDo() {
     });
 }
 
-function adicionarTarefa(strTarefa = txt_nova_tarefa.value) {
-    
-    if (txt_nova_tarefa.value.trim() !== "") {
+function adicionarTarefa(strTarefa) {
+    if (typeof strTarefa !== 'string' || strTarefa == null) {
+
+        strTarefa = txt_nova_tarefa.value;
+    }
+
+    if (strTarefa.trim !== "") {
         const btn_item = `
             <div>
                 <button class="btn btn-success btn-sm me-2 btn-concluir" onclick="concluirTarefa(this)">Concluir</button>
@@ -82,10 +86,13 @@ function concluirTarefa(btn_concluir) {
 }
 
 function excluirTarefa() {
+    const arrayTarefas = obterTarefasDoNavegador();
+    arrayTarefas.splice(id_tarefa_excluir, 1);
+    salvarCookieTarefas (arrayTarefas);
 
     lista_tarefas.removeChild(lista_tarefas.children[id_tarefa_excluir]);
-    modalExcluir.hide();
 
+    modalExcluir.hide();
 }
 
 function obterIDTarefaExcluir(btn) {
