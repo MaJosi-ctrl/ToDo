@@ -27,9 +27,16 @@ function iniciaToDo() {
     btn_nova_tarefa.addEventListener("click", adicionarTarefa);
 
     txt_nova_tarefa.addEventListener("keypress", adicionarTarefaEnter);
+
+    const arrayTarefas = obterTarefasDoNavegador();
+
+    salvarCookieTarefas([]);
+    arrayTarefas.forEach(strTarefa => {
+        adicionarTarefa(strTarefa);
+    });
 }
 
-function adicionarTarefa() {
+function adicionarTarefa(strTarefa = txt_nova_tarefa.value) {
     
     if (txt_nova_tarefa.value.trim() !== "") {
         const btn_item = `
@@ -42,7 +49,9 @@ function adicionarTarefa() {
         const item = document.createElement("li");
         item.classList.add("list-group-item", "d-flex", "justify-content-between", "align-items-center");
         
-        item.innerHTML = "<span class='w-75 text-truncate'>" + txt_nova_tarefa.value + "</span>" + btn_item;
+        item.innerHTML = "<span class='w-75 text-truncate'>" + strTarefa + "</span>" + btn_item;
+
+        adicionarTarefaAoCookie(strTarefa);
         
         lista_tarefas.append(item);
     }
@@ -86,9 +95,49 @@ function obterIDTarefaExcluir(btn) {
 
     id_tarefa_excluir = tarefas.indexOf(item);
 }
+ 
 
 //--------------------------------------------------------------------------
-// 3. ESCUTADORES DE EVENTOS E INÍCIO
+// 3. COOKIES
+//--------------------------------------------------------------------------
+
+
+const CHAVE_TAREFAS_TODO = 'tarefas_todo';
+
+function obterTarefasDoNavegador() {
+    
+    try {
+        const cookie = localStorage.getItem(CHAVE_TAREFAS_TODO);
+        if (cookie) {
+            return JSON.parse(cookie);
+        }
+    } catch (e) {
+        console.error("Falha ao ler o cookie do armazenamento local.");
+    }
+    
+    return [];
+}
+
+function salvarCookieTarefas(arrayTarefas) {
+    
+    try {
+        localStorage.setItem(CHAVE_TAREFAS_TODO, JSON.stringify(arrayTarefas));
+        
+    } catch (e) {
+        console.error("ERRO: Falha ao salvar as tarefas no navegador. Erro:", e);
+    }
+}
+
+function adicionarTarefaAoCookie(strTarefa) {
+
+    const arrayTarefas = obterTarefasDoNavegador();
+    arrayTarefas.push(strTarefa);
+    salvarCookieTarefas(arrayTarefas);
+}
+
+
+//--------------------------------------------------------------------------
+// 4. ESCUTADORES DE EVENTOS E INÍCIO
 //--------------------------------------------------------------------------
 
 iniciaToDo();
