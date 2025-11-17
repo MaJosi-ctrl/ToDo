@@ -78,3 +78,8 @@ input[type="text"]:focus {
     color: rgb(99, 188, 230);
 
 }
+
+.dragging {
+    opacity: 0.5;
+    background: rgba(98, 175, 211, 0.637);
+}
